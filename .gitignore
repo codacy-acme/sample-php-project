@@ -2,6 +2,7 @@
 #coverage
 /coverage/
 /.phpunit.cache/
+coverage.xml
 
 ##### Windows
 # Windows thumbnail cache files

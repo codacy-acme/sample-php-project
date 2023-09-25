@@ -26,10 +26,10 @@ jobs:
         run: composer install --no-scripts --no-progress --no-suggest
 
       - name: Run PHPUnit with coverage
-        run: vendor/bin/phpunit --coverage-clover=coverage.xml
+        run: vendor/bin/phpunit --coverage-clover coverage.xml
 
       - name: Upload coverage to Codacy
-        uses: codacy/upload-coverage@v2
+        uses: codacy/codacy-coverage-reporter-action@v1
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-report-file: coverage.xml
+          coverage-reports: coverage.xml
