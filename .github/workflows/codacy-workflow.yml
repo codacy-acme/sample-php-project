@@ -1,0 +1,35 @@
+name: Codacy Coverage
+
+on:
+  push:
+    branches:
+      - main  # Modify this branch as needed
+  pull_request:
+    branches:
+      - main  # Modify this branch as needed
+
+
+jobs:
+  codacy-coverage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2' # Change to your desired PHP version
+
+      - name: Install Composer dependencies
+        run: composer install --no-scripts --no-progress --no-suggest
+
+      - name: Run PHPUnit with coverage
+        run: vendor/bin/phpunit --coverage-clover=coverage.xml
+
+      - name: Upload coverage to Codacy
+        uses: codacy/upload-coverage@v2
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-report-file: coverage.xml

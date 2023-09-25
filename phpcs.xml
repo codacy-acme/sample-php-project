@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ruleset name="My Coding Standard">
+    <description>Custom coding standard for my project</description>
+    <arg name="extensions" value="php"/>
+    <arg name="parallel" value="8"/>
+    <file>./</file>
+    <arg name="colors"/>
+    <arg name="severity" value="1"/>
+    <arg name="report" value="full"/>
+    <rule ref="PSR2"/>
+</ruleset>

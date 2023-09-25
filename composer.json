@@ -1,0 +1,14 @@
+{
+    "name": "codacy/sample-php-project",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Codacy\\SamplePhpProject\\": "src/"
+        }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.7",
+        "phpmd/phpmd": "^2.13",
+        "phpunit/phpunit": "^10.3"
+    }
+}

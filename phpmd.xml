@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<ruleset name="My PHP Mess Detector Rules">
+    <description>Custom PHP Mess Detector rules for my project</description>
+    <rule name="UnusedVariable" ref="codesize"/>
+</ruleset>
